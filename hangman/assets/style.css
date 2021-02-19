@@ -132,3 +132,44 @@ svg {
   margin: 30px 0px;
   font-size: 20px;
 }
+
+#dot1 {
+  animation: dots 2s infinite;
+  animation-delay: 0s;
+}
+
+#dot2 {
+  animation: dots 2s infinite;
+  animation-delay: 0.3s;
+}
+
+#dot3 {
+  animation: dots 2s infinite;
+  animation-delay: 0.6s;
+}
+
+@keyframes dots {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opactiy: 1;
+  }
+}
+
+#plantdot {
+  animation: bounce 5s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
