@@ -3,3 +3,46 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-family: "Lobster", sans-serif;
+  font-size: 16px;
+}
+
+.text {
+  margin: 90px 20px;
+  padding: 5px;
+  border: 1px solid blue;
+  border-radius: 15px;
+}
+
+.container {
+  width: 1200px;
+  height: 700px;
+  border: 2px solid blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.narrative {
+  width: 550px;
+}
+
+svg {
+  width: 400px;
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+}
+
+.game {
+  width: 550px;
+}
