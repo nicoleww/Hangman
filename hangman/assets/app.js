@@ -22,22 +22,19 @@ const letter3 = document.querySelector(".letter4");
 const letter4 = document.querySelector(".letter5");
 const letter5 = document.querySelector(".letter6");
 const minutesLeft = document.querySelector(".num-score");
+const message = document.querySelector("h2");
 
 // event listeners
 
 window.onload = init;
 resetBtn.addEventListener("click", reset);
-guessBtn.addEventListener("click", getLetter);
+guessBtn.addEventListener("click", checkWord);
 
 // functions
 
 function init() {
     secretWord = wordArr[Math.floor(Math.random() * wordArr.length)];
     console.log(secretWord);
-}
-
-function getLetter() {
-
 }
 
 function render() {
@@ -51,7 +48,7 @@ function render() {
 }
 
 function checkWord() {
-
+    
 }
 
 function assignCorrectLetter() {
@@ -59,7 +56,13 @@ function assignCorrectLetter() {
 }
 
 function checkWin() {
-
+    if (numWrong === maxWrong) {
+        message.textContent = "Time's Up! Click Replay button to try again.";
+    } else if (guessedWord.length === secretWord.length && guessedWord !== secretWord) {
+        message.textContent = "Not quite, click Replay button to try again.";
+    } else if (guessedWord.length === secretWord.length && guessedWord === secretWord) {
+        message.textContent = "Perfect! Click Replay if you'd like to play again." 
+    }
 }
 
 function reset() {
