@@ -85,6 +85,11 @@ svg {
   margin: 130px 25px 70px 0px;
 }
 
+h2 {
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
 .board div {
   display: inline-block;
   font-size: 70px;
