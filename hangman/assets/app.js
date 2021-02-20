@@ -22,7 +22,6 @@ const letter4 = document.querySelector(".letter4");
 const letter5 = document.querySelector(".letter5");
 const minutesLeft = document.querySelector(".num-score");
 const message = document.querySelector("h2");
-const letter = document.querySelector("#input").value;
 
 // event listeners
 
@@ -38,24 +37,31 @@ function init() {
 }
 
 function checkLetter() {
-        secretWord.forEach(function(string) {
-            if (letter === secretWord[0]) {
-                guessedWord[0] = secretWord[0];
-            } else if (letter === secretWord[1]) {
-                guessedWord[1] = secretWord[1];
-            } else if (letter === secretWord[2]) {
-                guessedWord[2] = secretWord[2];
-            } else if (letter === secretWord[3]) {
-                guessedWord[3] = secretWord[3];
-            } else if (letter === secretWord[4]) {
-                guessedWord[4] = secretWord[4];
-            } else if (letter === secretWord[5]) {
-                guessedWord[5] = secretWord[5];
-            }
-        })
-        console.log(guessedWord[5]);
-        console.log(letter);
-    }
+    let letter = document.querySelector("#input").value;
+    secretWord.forEach(function(string) {
+        if (letter !== secretWord[0] && letter !== secretWord[1] && letter !== secretWord[2] && letter !== secretWord[3] && letter !== secretWord[4] && letter !== secretWord[5]) {
+            numWrong += 1;
+        } else if (letter === secretWord[0]) {
+            guessedWord.splice(0, 1, secretWord[0]);
+        } else if (letter === secretWord[1]) {
+            guessedWord.splice(1, 1, secretWord[1]);
+        } else if (letter === secretWord[2]) {
+            guessedWord.splice(2, 1, secretWord[2]);
+        } else if (letter === secretWord[3]) {
+            guessedWord.splice(3, 1, secretWord[3]);
+        } else if (letter === secretWord[4]) {
+            guessedWord.splice(4, 1, secretWord[4]);
+        } else if (letter === secretWord[5]) {
+            guessedWord.splice(5, 1, secretWord[5]);
+        }
+    })  
+    console.log(letter);
+
+console.log(numWrong);
+
+}
+
+
 
 
 
