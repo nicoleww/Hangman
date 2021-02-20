@@ -7,7 +7,7 @@ const maxWrong = 6;
 
 let numWrong = 0;
 let guessedWord = ['_', '_', '_', '_', '_', '_'];
-let secretWord = [];
+let secretWord = ['', '', '', '', '', ''];
 
 // cached elements
 
@@ -22,8 +22,7 @@ const letter4 = document.querySelector(".letter4");
 const letter5 = document.querySelector(".letter5");
 const minutesLeft = document.querySelector(".num-score");
 const message = document.querySelector("h2");
-const letter = document.getElementById("input").value;
-const inputField = document.getElementById("input");
+const letter = document.querySelector("#input").value;
 
 // event listeners
 
@@ -34,18 +33,30 @@ guessBtn.addEventListener("click", checkLetter);
 // functions
 
 function init() {
-    secretWord = wordArr[Math.floor(Math.random() * wordArr.length)];
+    secretWord = wordArr[Math.floor(Math.random() * wordArr.length)].split('');
     console.log(secretWord);
 }
 
 function checkLetter() {
-    if (letter.length > 1 || letter.length < 1) {
-        message.textContent = "Invalid guess: please pick one letter.";
-        inputField.addEventListener("click", function() {
-            message.textContent = null;
+        secretWord.forEach(function(string) {
+            if (letter === secretWord[0]) {
+                guessedWord[0] = secretWord[0];
+            } else if (letter === secretWord[1]) {
+                guessedWord[1] = secretWord[1];
+            } else if (letter === secretWord[2]) {
+                guessedWord[2] = secretWord[2];
+            } else if (letter === secretWord[3]) {
+                guessedWord[3] = secretWord[3];
+            } else if (letter === secretWord[4]) {
+                guessedWord[4] = secretWord[4];
+            } else if (letter === secretWord[5]) {
+                guessedWord[5] = secretWord[5];
+            }
         })
-        }
+        console.log(guessedWord[5]);
+        console.log(letter);
     }
+
 
 
 function render() {
