@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/iconmonstr-email-4.svg" />
     <link rel="stylesheet" href="assets/style.css" />
-    <script src="assets/app.js" defer></script>
 </head>
 <body>
 <div class="container">
@@ -104,12 +103,12 @@
             <div class="lives">
                 <div class="score">
                     <p>Minutes Left:</p>
-                    <p class="score-num">6</p>
+                    <div class="score-num"> </div>
                 </div>
                 <button class="replay">Replay</button>
             </div>
             <div class="board">
-                <h2></h2>
+                <div id="message"></div>
                 <div class="letter0">_</div>
                 <div class="letter1">_</div>
                 <div class="letter2">_</div>
@@ -123,10 +122,11 @@
             </div>
             <div class="past-guess">
                 <p>Guessed Letters:</p>
-                <div class="guessed">
-                </div>
+                <p id="guessed">
+                </p>
             </div>
         </div>
     </div>
+    <script src="assets/app.js"></script>
 </body>
 </html>
