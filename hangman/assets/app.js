@@ -9,6 +9,8 @@ let numWrong = 0;
 let minutesLeft = 6;
 let guessedWord = ['_', '_', '_', '_', '_', '_'];
 let secretWord = ['', '', '', '', '', ''];
+let correctSound = new Audio('correct.mp3');
+let thinkingSound = new Audio('hmm.mp3');
 
 // cached elements
 
@@ -41,12 +43,13 @@ function checkLetter() {
     let letter = document.querySelector("#input").value;
     let isLetterInArray = secretWord.indexOf(letter);
     if (isLetterInArray === -1) {
-        numWrong ++;
+        thinkingSound.play();
         minutesLeft--;
         minutes.textContent = `${minutesLeft}`;
         wrongLetterBox.textContent = `${letter}`;
         checkWin;
     } else {
+        correctSound.play();
         guessedWord.splice(isLetterInArray, 1, secretWord[isLetterInArray]);
         checkWin;
     } 
