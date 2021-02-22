@@ -17,7 +17,6 @@ let thinkingSound = new Audio('hmm.mp3');
 
 let guessBtn = document.getElementById("btn");
 let resetBtn = document.querySelector(".replay");
-let wrongLetterBox = document.getElementById("guessed");
 let letter0 = document.querySelector(".letter0");
 let letter1 = document.querySelector(".letter1");
 let letter2 = document.querySelector(".letter2");
@@ -43,7 +42,7 @@ guessBtn.addEventListener("click", checkLetter);
 
 function init() {
     secretWord = wordArr[Math.floor(Math.random() * wordArr.length)].split('');
-    console.log(secretWord);
+    minutes.textContent = `${minutesLeft}`;
 }
 
 function checkLetter() {
@@ -60,11 +59,7 @@ function checkLetter() {
         correctSound.play();
         guessedWord.splice(isLetterInArray, 1, secretWord[isLetterInArray]);
         checkWin();
-        console.log(guessedWord);
     } 
-    console.log(numWrong);
-    console.log(minutesLeft);
-
 }
 
 function checkWin() {
@@ -75,7 +70,7 @@ function checkWin() {
     } else if (guessedWordCheck === secretWordCheck) {
         message.textContent = "Perfect! Click Replay if you'd like to play again." 
     }
-}console.log(guessedWord);
+}
 
 function render() {
     setTimeout(render, 200);
