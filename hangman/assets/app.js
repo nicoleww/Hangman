@@ -9,6 +9,7 @@ let numWrong = 0;
 let minutesLeft = 6;
 let guessedWord = ['_', '_', '_', '_', '_', '_'];
 let secretWord = ['', '', '', '', '', ''];
+let wrongGuesses = [];
 let correctSound = new Audio('correct.mp3');
 let thinkingSound = new Audio('hmm.mp3');
 
@@ -23,6 +24,12 @@ let letter2 = document.querySelector(".letter2");
 let letter3 = document.querySelector(".letter3");
 let letter4 = document.querySelector(".letter4");
 let letter5 = document.querySelector(".letter5");
+let wrong0 = document.querySelector(".wrong0");
+let wrong1 = document.querySelector(".wrong1");
+let wrong2 = document.querySelector(".wrong2");
+let wrong3 = document.querySelector(".wrong3");
+let wrong4 = document.querySelector(".wrong4");
+let wrong5 = document.querySelector(".wrong5");
 let message = document.getElementById("message");
 let minutes = document.querySelector(".score-num");
 
@@ -47,7 +54,7 @@ function checkLetter() {
         numWrong ++;
         minutesLeft--;
         minutes.textContent = `${minutesLeft}`;
-        wrongLetterBox.textContent = `${letter}`;
+        wrongGuesses.push(letter);
         checkWin();
     } else {
         correctSound.play();
@@ -78,6 +85,12 @@ function render() {
     letter3.textContent = guessedWord[3];
     letter4.textContent = guessedWord[4];
     letter5.textContent = guessedWord[5];
+    wrong0.textContent = wrongGuesses[0];
+    wrong1.textContent = wrongGuesses[1];
+    wrong2.textContent = wrongGuesses[2];
+    wrong3.textContent = wrongGuesses[3];
+    wrong4.textContent = wrongGuesses[4];
+    wrong5.textContent = wrongGuesses[5];
 }
 
 function reset() {

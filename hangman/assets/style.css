@@ -137,9 +137,20 @@ h2 {
   border-radius: 10px;
 }
 
-.guessed {
+.past-guess p {
+  margin-top: 5px;
+}
+
+#guessed {
   height: 100px;
-  font-size: 20px;
+  font-size: 35px;
+  padding: 30px 0;
+  text-align: center;
+}
+
+#guessed div {
+  display: inline-block;
+  padding: 5px;
 }
 
 #dot1 {
