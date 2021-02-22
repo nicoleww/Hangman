@@ -24,7 +24,7 @@ h1 {
 
 .container {
   width: 1200px;
-  height: 700px;
+  height: 750px;
   border: 4px solid rgb(4, 4, 199);
   position: absolute;
   top: 50%;
@@ -52,9 +52,9 @@ svg {
 
 .lives p {
   display: inline-block;
-  padding-top: 20px;
-  font-size: 25px;
+  font-size: 20px;
   margin-left: 20px;
+  padding-top: 20px;
 }
 
 .lives {
@@ -92,6 +92,10 @@ h2 {
 .board div {
   display: inline-block;
   font-size: 70px;
+}
+
+#message {
+  font-size: 13px;
 }
 
 .guess-box {

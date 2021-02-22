@@ -24,7 +24,7 @@ let letter3 = document.querySelector(".letter3");
 let letter4 = document.querySelector(".letter4");
 let letter5 = document.querySelector(".letter5");
 let message = document.getElementById("message");
-let minutes = document.querySelector(".num-score");
+let minutes = document.querySelector(".score-num");
 
 // event listeners
 
@@ -44,14 +44,16 @@ function checkLetter() {
     let isLetterInArray = secretWord.indexOf(letter);
     if (isLetterInArray === -1) {
         thinkingSound.play();
+        numWrong ++;
         minutesLeft--;
         minutes.textContent = `${minutesLeft}`;
         wrongLetterBox.textContent = `${letter}`;
-        checkWin;
+        checkWin();
     } else {
         correctSound.play();
         guessedWord.splice(isLetterInArray, 1, secretWord[isLetterInArray]);
-        checkWin;
+        checkWin();
+        console.log(guessedWord);
     } 
     console.log(numWrong);
     console.log(minutesLeft);
@@ -59,14 +61,14 @@ function checkLetter() {
 }
 
 function checkWin() {
+    let guessedWordCheck = guessedWord.join('');
+    let secretWordCheck = secretWord.join('');
     if (numWrong >= maxWrong) {
         message.textContent = "Time's Up! Click Replay button to try again.";
-    } else if (guessedWord.length === secretWord.length && guessedWord !== secretWord) {
-        message.textContent = "Not quite, click Replay button to try again.";
-    } else if (guessedWord.length === secretWord.length && guessedWord === secretWord) {
+    } else if (guessedWordCheck === secretWordCheck) {
         message.textContent = "Perfect! Click Replay if you'd like to play again." 
     }
-}
+}console.log(guessedWord);
 
 function render() {
     setTimeout(render, 200);
