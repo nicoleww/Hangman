@@ -10,8 +10,8 @@ let minutesLeft = 6;
 let guessedWord = ['_', '_', '_', '_', '_', '_'];
 let secretWord = ['', '', '', '', '', ''];
 let wrongGuesses = [];
-let correctSound = new Audio('correct.mp3');
-let thinkingSound = new Audio('hmm.mp3');
+let correctSound = new Audio('hangman/correct.mp3');
+let thinkingSound = new Audio('hangman/hmm.mp3');
 
 // cached elements
 
