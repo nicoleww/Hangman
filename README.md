@@ -16,7 +16,7 @@
 </ul>
 <h3>Getting Started</h3>
 <p>Click the link below to try out my game.</p>
-<a href="#">Play Hangman</a>
+<a href="https://nicoleww.github.io/Hangman/">Play Hangman</a>
 <br />
 <h3>Next Steps</h3>
 <ul>
