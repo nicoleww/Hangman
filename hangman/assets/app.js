@@ -50,14 +50,16 @@ function checkLetter() {
     let isLetterInArray = secretWord.indexOf(letter);
     if (isLetterInArray === -1) {
         thinkingSound.play();
+        thinkingSound.currentTime = 0;
         numWrong ++;
         minutesLeft--;
         minutes.textContent = `${minutesLeft}`;
         wrongGuesses.push(letter);
         checkWin();
     } else {
-        correctSound.play();
         guessedWord.splice(isLetterInArray, 1, secretWord[isLetterInArray]);
+        correctSound.play();
+        correctSound.currentTime = 0;
         checkWin();
     } 
 }
